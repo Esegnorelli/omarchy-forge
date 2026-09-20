@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "esegnorelli.forge",
+  "name": "Forge",
+  "version": "1.0.0",
+  "author": "Evandro Segnorelli",
+  "license": "MIT",
+  "description": "Keyboard-first developer toolbox for the Omarchy bar: UUID, passwords, hash, JSON, units, timestamps, and snippets.",
+  "kinds": ["bar-widget", "overlay"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml",
+    "overlay": "Overlay.qml"
+  },
+  "barWidget": {
+    "displayName": "Forge",
+    "description": "Instant developer tools from the bar. Type a query, Enter copies.",
+    "category": "Productivity",
+    "aliases": ["forge", "uuid", "password", "hash", "json", "toolbox"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "passwordLength": 20,
+      "passwordSymbols": true,
+      "historySize": 16
+    },
+    "schema": [
+      {
+        "key": "passwordLength",
+        "type": "integer",
+        "label": "Default password length",
+        "min": 8,
+        "max": 128,
+        "step": 1,
+        "defaultValue": 20
+      },
+      {
+        "key": "passwordSymbols",
+        "type": "boolean",
+        "label": "Include symbols in passwords",
+        "defaultValue": true
+      },
+      {
+        "key": "historySize",
+        "type": "integer",
+        "label": "History size",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "defaultValue": 16
+      }
+    ]
+  }
+}
